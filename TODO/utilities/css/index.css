@@ -1,0 +1,117 @@
+*{box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; color: #bbbbbb;}
+body{
+    background-color: #555555;
+}
+header{
+    height: 60px;
+    background-color: #454545;
+}
+#head{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+#logo{
+    font-weight: bold;
+    margin: 14px 20px;
+}
+#rightNav ul{
+    margin: 6px 15px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#rightNav ul li{
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+}
+#rightNav li:hover{
+    color: #dddddd;
+    text-decoration: underline;
+}
+#addTodo{
+    max-width: 750px;
+    padding: 5px;
+}
+#addTodo div.trigger{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#addTodo div.trigger span{
+    padding: 10px;
+    font-weight: bold;
+    text-align: right;
+}
+#addTodo div.trigger i{
+    padding: 10px;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+}
+#addTodo div.trigger i:hover{
+   cursor: pointer;
+}
+#addItem{
+    display: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #888888;
+}
+#addItem input[type='text']{
+    background: #555555;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+}
+#addItem input[type='submit']{
+    background: none;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#todoList{
+    list-style: none;
+    margin: 20px 20px 20px 35px;  
+}
+.todoitem{
+    border-radius: 5px;
+    text-align: left;
+    border: 1.5px solid #888888;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 20px;
+    max-width: 750px;
+}
+.time{
+    font-size: 14px;
+    display: none;
+    padding: 2px;
+}
+.todoitem:hover{
+    background-color: #454545;
+}
+.todoDet{
+    margin-top: 5px;
+    border-top: 0.5px solid #aaaaaa;
+    display: none;
+    font-size: 14px;
+    padding: 10px;
+    text-align: justify;
+}
+.todoitem i{
+    float: right;
+    padding: 2px;
+    margin-left: 10px;
+}
+.todoitem i:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <script src='../utilities/js/jQuery.min.js'></script>
+    <link href='../utilities/css/index.css' rel='stylesheet' type='text/css' >
+    <link href='../utilities/fontawesome/css/font-awesome.min.css' rel='stylesheet' type='text/css' >
+</head>
+<body>
+    <header>
+        <center>
+            <div id='head'>
+                <h1 id='logo'>TODO</h1>
+                <div id='rightNav'>
+                    <ul>
+                        <li>login</li>
+                    </ul>
+                </div>
+            </div>
+        </center>
+    </header>
+    <div>
+        <center>            
+            <form id="addTodo">
+                <div class="trigger"><span>Your upcomming TODOs</span><i class='fa fa-plus' onclick="$(this).parent().next().slideToggle('fast')"></i></div>
+                <div id='addItem'>
+                    <input type='text' placeholder='Enter new TODO' name='item' autocomplete='off'><br>
+                    <input type='text' placeholder='YYYY-MM-DD' name='date' autocomplete='off'><br>
+                    <input type='text' placeholder='Describe your TODO' name='desc' autocomplete='off'><br>
+                </div>
+            </form>
+            <ul id='todoList'>
+                <% for(var i = 0; i < todos.length; i++){ %>
+                    <li class='todoitem' onmouseover="$(this).children('span.time').css({display: 'inline'});" onmouseout="$(this).children('.time').css({display:'none'})">
+                        <span ondblclick="deleteItem(this)"><%= todos[i].item %></span>
+                        <span class='time'>scheduled to : <%= todos[i].date %></span>
+                        <i onclick='collapse(this)' class='fa fa-caret-down'></i>
+                        <p class='todoDet'><%= todos[i].desc %></p>                       
+                    </li>
+                <% } %>
+            </ul>
+        </center>        
+    </div>   
+    
+    <script src='../utilities/js/main.js'></script>
+    <script>
+        function getdayleft(ele, dateStr) {
+            var date2 = new Date(dateStr);
+            var date1 = new Date();
+            var days = Math.floor((date2.getTime() - date.getTime()) / (1000 * 3600 * 24));
+            console.log(days);
+            if (days > 0) $(ele).text(days + ' days left.');
+        }
+    </script>
+</body>
+</html>
